@@ -38,8 +38,8 @@ jobs:
 
           if [ "${LocalReleaseTag}" != "${OnlineReleaseTag}" ]
           then
-             echo "::set-output name=version::${TAG}"
-             echo "::set-output name=status::success"
+             echo "version=${TAG}" >> $GITHUB_ENV
+             echo "status=success" >> $GITHUB_ENV
           fi
 
       - name: Update ReleaseTag
@@ -61,10 +61,10 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           file: ./Dockerfile
-          platforms: linux/amd64,linux/arm/v7,linux/arm64
+          platforms: linux/amd64,linux/arm/v7,linux/arm64,linux/386
           push: true
           tags: |
-            superng6/ariang:${{ steps.set-version.outputs.version }}
-            superng6/ariang:latest
+            antman666/ariang:${{ steps.set-version.outputs.version }}
+            antman666/ariang:latest
 
 
