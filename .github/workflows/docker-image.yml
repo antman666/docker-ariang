@@ -39,16 +39,16 @@ jobs:
           if [ "${LocalReleaseTag}" != "${OnlineReleaseTag}" ]
           then
              echo "version=${TAG}" >> $GITHUB_ENV
-             echo "status=success" >> $GITHUB_ENV
+             echo "status='success'" >> $GITHUB_ENV
           fi
 
       - name: Update ReleaseTag
-        if: steps.set-version.outputs.status == 'success'
+        # if: steps.set-version.outputs.status == 'success'
         run: |
           echo ${{ steps.set-version.outputs.version }} > ./ReleaseTag
 
       - name: Push
-        if: steps.set-version.outputs.status == 'success'
+        # if: steps.set-version.outputs.status == 'success'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -57,7 +57,7 @@ jobs:
 
       # Build and push
       - name: Build dockerfile
-        if: steps.set-version.outputs.status == 'success'
+        # if: steps.set-version.outputs.status == 'success'
         uses: docker/build-push-action@v6
         with:
           file: ./Dockerfile
