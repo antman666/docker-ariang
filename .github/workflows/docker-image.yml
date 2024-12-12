@@ -38,8 +38,8 @@ jobs:
 
           if [ "${LocalReleaseTag}" != "${OnlineReleaseTag}" ]
           then
-             echo "version=${TAG}" >> $GITHUB_OUTPUT
-             echo "status='success'" >> $GITHUB_OUTPUT
+             echo "version=${TAG}" >> $GITHUB_OUTPUTS
+             echo "status='success'" >> $GITHUB_OUTPUTS
           fi
 
       - name: Update ReleaseTag
