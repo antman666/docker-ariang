@@ -9,7 +9,7 @@ RUN apk add --no-cache curl unzip darkhttpd \
 
 LABEL maintainer="antman666"
 # darkhttpd port
-EXPOSE 80
+EXPOSE 6880
 # start darkhttpd
 ENTRYPOINT [ "/bin/darkhttpd" ]
 CMD [ "/www" ]
