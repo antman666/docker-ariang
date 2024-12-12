@@ -11,5 +11,5 @@ LABEL maintainer="antman666"
 # darkhttpd port
 EXPOSE 6880
 # start darkhttpd
-ENTRYPOINT [ "/bin/darkhttpd" ]
+ENTRYPOINT [ "/usr/bin/darkhttpd" ]
 CMD [ "/www" ]
