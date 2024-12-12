@@ -8,8 +8,6 @@ RUN apk add --no-cache curl unzip darkhttpd \
 && cp /tmp/index.html /www/index.html
 
 LABEL maintainer="antman666"
-# darkhttpd port
-EXPOSE 6880
 # start darkhttpd
 ENTRYPOINT [ "/usr/bin/darkhttpd" ]
-CMD [ "/www" ]
+CMD [ "/www" "--port" "6880"]
