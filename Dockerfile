@@ -1,4 +1,4 @@
-FROM antman666/s6-alpine:latest as builder
+FROM woahbase/s6-alpine:latest as builder
 
 RUN apk add --no-cache curl unzip \
 && ARIANG_VER=$(wget -qO- https://api.github.com/repos/mayswind/AriaNg/tags | grep 'name' | cut -d\" -f4 | head -1 ) \
