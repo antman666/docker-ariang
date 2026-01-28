@@ -5,7 +5,7 @@ RUN apk add --no-cache curl unzip \
 && wget -P /tmp https://github.com/mayswind/AriaNg/releases/download/${ARIANG_VER}/AriaNg-${ARIANG_VER}-AllInOne.zip \
 && unzip /tmp/AriaNg-${ARIANG_VER}-AllInOne.zip -d /tmp
 
-FROM p3terx/darkhttpd
+FROM antman666/darkhttpd:latest
 # set label
 LABEL maintainer="antman666"
 # copy AriaNg
